@@ -1,29 +1,29 @@
-# Heroku Buildpack: Haskell
+# Buildpack: Haskell
 
-This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks)
+This is a [buildpack](https://www.cloudcontrol.com/dev-center/Platform%20Documentation#buildpacks-and-the-procfile)
 for Haskell apps. It uses GHC 7.4.1 and cabal-1.16.0.1.
 
 ## Demo
 
 A demo is online here:
 
-http://haskell-buildpack-demo.herokuapp.com/
+http://haskelldemo.cloudcontrolled.com
 
 The demo repo is here:
 
-https://github.com/pufuwozu/haskell-buildpack-demo
+https://github.com/fern4lvarez/haskell-buildpack-demo
 
 ## Usage
 
     $ ls
     Procfile app.cabal src
 
-    $ heroku create --stack=cedar --buildpack https://github.com/pufuwozu/heroku-buildpack-haskell.git
+    $ cctrlapp APP_NAME create custom --buildpack https://github.com/fern4lvarez/buildpack-haskell.git
 
-    $ git push heroku master
+    $ cctrlapp APP_NAME/default push
     ...
 
-    -----> Heroku receiving push
+    -----> Receiving push
     -----> Fetching custom git buildpack... done
     -----> Haskell app detected
     -----> Downloading GHC
@@ -32,3 +32,5 @@ https://github.com/pufuwozu/haskell-buildpack-demo
     ######################################################################## 100.0%
     -----> Setting up ghc-pkg
     ...
+
+    $ cctrlapp APP_NAME/default deploy
